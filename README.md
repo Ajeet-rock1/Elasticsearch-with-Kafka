@@ -17,5 +17,11 @@ Please keep in mind JAVA_OPTS has defined by default in elasticsearch like below
 
 
     By default, ES_JAVA_OPTS is set to -Xms256m -Xmx256m. This is a very low value but many users, i.e. Myself, were having issues with pods getting killed because hosts were out of memory. You can change this yourself in the deployment descriptors available in this repository.
+    
+    Pre-requisites.
+    
+   1:- Need to intsall Latest OpenJDK
+   2:- Need to deploy all nodes in one subnet
+ 
 
 

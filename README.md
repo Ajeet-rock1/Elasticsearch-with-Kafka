@@ -22,6 +22,13 @@ Please keep in mind JAVA_OPTS has defined by default in elasticsearch like below
     
    1:- Need to intsall Latest OpenJDK
    2:- Need to deploy all nodes in one subnet
+   3:- Need to open recommanded ports 9200 and 9300
+   4:- Need to deploy stable version of kafka 
+   5:- Need to deploy zookeeper stable version 
+   6:- Need to deploy shipper and indexer for stable version
+   
+   
+.___________
  
 
 

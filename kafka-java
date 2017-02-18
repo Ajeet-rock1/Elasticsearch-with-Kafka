@@ -1,0 +1,49 @@
+
+Introduction:-
+
+Apache Kafka is an open-source stream processing platform developed by the Apache Software Foundation written in Scala and Java. The project aims to provide a unified, high-throughput,
+low-latency platform for handling real-time data feeds.
+
+Befor kafka installation we need to install java lastest version jdk.
+
+Step:-1
+Download JDK
+
+If Java is not downloaded, please download the latest version of JDK by visiting the following link and download latest version.
+http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+Now the latest version is JDK 8u 60 and the file is “jdk-8u60-linux-x64.tar.gz”. Please download the file on your machine.
+
+Step:-2
+Extract Files
+Generally, files being downloaded are stored in the downloads folder, verify it and extract the tar setup using the following commands.
+
+$ cd /go/to/download/path
+$ tar -zxf jdk-8u60-linux-x64.gz
+
+Step:-3
+
+Move to Opt Directory
+
+To make java available to all users, move the extracted java content to "usr/local/java"/ folder.
+
+$ su
+password: (type password of root user)
+$ mkdir /opt/jdk
+$ mv jdk-1.8.0_60 /opt/jdk/
+
+
+Step:-4
+Set path
+
+To set path and JAVA_HOME variables, add the following commands to ~/.bashrc file.
+
+export JAVA_HOME =/usr/jdk/jdk-1.8.0_60
+export PATH=$PATH:$JAVA_HOME/bin
+
+Now apply all the changes into current running system.
+
+$ source ~/.bashrc
+
+
+

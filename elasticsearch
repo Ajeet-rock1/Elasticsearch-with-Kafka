@@ -1,0 +1,42 @@
+-------------How To Install and Configure Elasticsearch on Ubuntu 14.04------------------------
+
+=====Introduction=====
+
+Elasticsearch is a platform for distributed search and analysis of data in real time. Its popularity is due to its ease of use, powerful features, and scalability.
+Elasticsearch supports RESTful operations. This means that you can use HTTP methods (GET, POST, PUT, DELETE, etc.) in combination with an HTTP URI (/collection/entry) to manipulate your data. The intuitive RESTful approach is both developer and user friendly, which is one of the reasons for Elasticsearch's popularity.
+Elasticsearch is a free and open source software with a solid company behind it — Elastic. This combination makes it suitable for use in anywhere from personal testing to corporate integration.
+
+
+----Prerequisites----
+
+Before following this tutorial, please make sure you complete the following prerequisites:
+
+    A:- Ubuntu 14.04 Droplet
+    A:- non-root sudo user. Check out Initial Server Setup with Ubuntu 14.04 for details.
+
+Except otherwise noted, all of the commands that require root privileges in this tutorial should be run as a non-root user with sudo privileges.
+
+Step 1 — Installing Java
+
+First, you will need a Java Runtime Environment (JRE) on your Droplet because Elasticsearch is written in the Java programming language. Elasticsearch requires Java 7 or higher. Elasticsearch recommends Oracle JDK version 1.8.0_73, but the native Ubuntu OpenJDK native package for the JRE works as well.
+
+This step shows you how to install both versions so you can decide which is best for you.
+Installing OpenJDK
+
+The native Ubuntu OpenJDK native package for the JRE is free, well-supported, and automatically managed through the Ubuntu APT installation manager.
+
+Before installing OpenJDK with APT, update the list of available packages for installation on your Ubuntu Droplet by running the command:
+
+$ sudo apt-get update
+
+After that, you can install OpenJDK with the command:
+
+$ sudo apt-get install openjdk-7-jre
+
+To verify your JRE is installed and can be used, run the command:
+
+$ java -version
+
+The result should look like this:
+
+

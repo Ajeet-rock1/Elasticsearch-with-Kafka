@@ -125,6 +125,9 @@ node.name: "es-1"
 cluster.name: test
 ...
 
+If all confguration has done in etc/elasticsearch/elasticsearch.yml 
+then please create soft link   ln -s /etc/elasticsearch/ /usr/share/elasticsearch/config
+
 All ES config is in others file.
 
 Thanks

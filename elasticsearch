@@ -39,4 +39,92 @@ $ java -version
 
 The result should look like this:
 
+java version "1.8.0_121"
+Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
 
+
+====Installing Java 8====
+
+When you advance in using Elasticsearch and you start looking for better Java performance and compatibility, you may opt to install Oracle's proprietary Java (Oracle JDK 8).
+
+Add the Oracle Java PPA to apt:
+
+    $ sudo add-apt-repository -y ppa:webupd8team/java
+
+Update your apt package database:
+
+    $ sudo apt-get update
+
+Install the latest stable version of Oracle Java 8 with this command (and accept the license agreement that pops up):
+
+    $ sudo apt-get -y install oracle-java8-installer
+
+Lastly, verify it is installed:
+
+    java -version
+    
+    
+    
+    ---Step 2 — Downloading and Installing Elasticsearch---
+    
+    
+    Elasticsearch can be downloaded directly from elastic.co in zip, tar.gz, deb, or rpm packages. For Ubuntu, it's best to use the deb (Debian) package which will install everything you need to run Elasticsearch.
+
+At the time of this writing, the latest Elasticsearch version is 2.4.1 Download it in a directory of your choosing with the command:
+
+$ wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.4.1/elasticsearch-2.4.1.deb
+
+Then install it in the usual Ubuntu way with the dpkg command like this:
+
+$ dpkg -i elasticsearch-2.4.1.deb
+
+This results in Elasticsearch being installed in /usr/share/elasticsearch/ with its configuration files placed in /etc/elasticsearch and its init script added in /etc/init.d/elasticsearch.
+ 
+--- Please keep in mind these below config is basic recommandation for first step ---
+
+Please create directory  for ES data and ES log files stores.
+
+Like:-
+
+$ mkdir -p elasticsearch/data
+$ mkdir -p var/log/elasticsearch/es-1
+
+Please give the permission for these dir.
+like:-
+
+$ chmod 755 elasticsearch/data/
+$ chmod 755 es-1
+
+
+Step 3 — Configuring Elastic
+
+Now that Elasticsearch and its Java dependencies have been installed, it is time to configure Elasticsearch.
+
+The Elasticsearch configuration files are in the /etc/elasticsearch directory. There are two files:
+
+    A:- elasticsearch.yml — Configures the Elasticsearch server settings. This is where all options, except those for logging, are stored, which is why we are mostly interested in this file.
+
+    B:- logging.yml — Provides configuration for logging. In the beginning, you don't have to edit this file. You can leave all default logging options. You can find the resulting logs in /var/log/elasticsearch by default.
+
+
+The first variables to customize on any Elasticsearch server are node.name and cluster.name in elasticsearch.yml. As their names suggest, node.name specifies the name of the server (node) and the cluster to which the latter is associated.
+
+If you don't customize these variable, a node.name will be assigned automatically in respect to the Droplet hostname. The cluster.name will be automatically set to the name of the default cluster.
+
+The cluster.name value is used by the auto-discovery feature of Elasticsearch to automatically discover and associate Elasticsearch nodes to a cluster. Thus, if you don't change the default value, you might have unwanted nodes, found on the same network, in your cluster.
+
+To start editing the main elasticsearch.yml configuration file:
+
+$ sudo nano /etc/elasticsearch/elasticsearch.yml
+
+Remove the # character at the beginning of the lines for node.name and cluster.name to uncomment them, and then change their values. Your first configuration changes in the /etc/elasticsearch/elasticsearch.yml file should look like this
+
+...
+node.name: "es-1"
+cluster.name: test
+...
+
+All ES config is in others file.
+
+Thanks

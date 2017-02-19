@@ -7,7 +7,7 @@ Step 1 - Download ZooKeeper
 
 To install ZooKeeper framework on your machine, visit the following link and download the latest version of ZooKeeper.
 
-wget http://mirrors.maychuviet.vn/apache/zookeeper/stable/zookeeper-3.4.6.tar.gz
+wget www-eu.apache.org/dist/zookeeper/stable/zookeeper-3.4.9.tar.gz )stable version)
 
 Or 
 http://zookeeper.apache.org/releases.html

@@ -46,4 +46,60 @@ Now apply all the changes into current running system.
 $ source ~/.bashrc
 
 
+Step 5 - Apache Kafka Installation
+
+Let us continue with the following steps to install Kafka on your machine.
+Step 5.1 - Download Kafka
+
+To install Kafka on your machine, click on the below link −
+https://www.apache.org/dyn/closer.cgi?path=/kafka/0.9.0.0/kafka_2.11-0.9.0.0.tgz
+
+Now the latest version i.e., – kafka_2.11_0.9.0.0.tgz will be downloaded onto your machine.
+
+But i am using below version.
+
+wget http://apache.mirrors.lucidnetworks.net/kafka/0.8.2.1/kafka_2.10-0.8.2.1.tgz
+
+Step 5.2 - Extract the tar file
+
+Extract the tar file using the following command −
+
+$ cd opt/
+$ tar -zxf kafka_2.10-0.8.2.1.tgz
+$ cd kafka_2.10-0.8.2.1
+
+Now you have downloaded the latest version of Kafka on your machine.
+
+Step 5.3 - Start Server
+
+You can start the server by giving the following command −
+
+$ bin/kafka-server-start.sh config/server.properties
+
+After the server starts, you would see the below response on your screen −
+
+$ bin/kafka-server-start.sh config/server.properties
+[2016-01-02 15:37:30,410] INFO KafkaConfig values:
+request.timeout.ms = 30000
+log.roll.hours = 168
+inter.broker.protocol.version = 0.9.0.X
+log.preallocate = false
+security.inter.broker.protocol = PLAINTEXT
+…………………………………………….
+…………………………………………….
+
+Step 6 - Stop the Server
+
+After performing all the operations, you can stop the server using the following command −
+
+$ bin/kafka-server-stop.sh config/server.properties
+
+Now all configuration file have uploaded on github.
+
+
+
+
+
+
+
 

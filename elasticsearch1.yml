@@ -25,8 +25,8 @@
 # Add custom attributes to the node:
 #
 # node.rack: r1
- node.master: true
- node.data: false
+ node.master: true (mater node)
+ node.data: false  (data node)
 
 # ----------------------------------- Paths ------------------------------------
 #
